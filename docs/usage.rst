@@ -160,6 +160,9 @@ If you want to get rid of username you'll need to do some extra work:
            def generate_username(self, form):
                # do something to generate a unique username (required by the
                # Django User model, unfortunately)
+               # If we have unique email, use this construction for generate unique username.
+               # username=self.cleaned_data['username'].split('@',1)[0].
+               # simple <magic> ^_^
                username = "<magic>"
                return username
 
